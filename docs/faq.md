@@ -28,6 +28,14 @@ Two ways:
 1. **Fresh install** — Download an ISO from [tunaos.org/download](https://tunaos.org/download) and write it to USB
 2. **Switch from an existing bootc system** — `sudo bootc switch ghcr.io/tuna-os/yellowfin:gnome && sudo reboot`
 
+**Where do I download the ISOs?**
+
+Use the [TunaOS download page](https://tunaos.org/download), which lists the
+current installation media. You can also find published ISO assets in the
+[GitHub Releases](https://github.com/tuna-os/tunaOS/releases) for the relevant
+project. This answers the question from
+[Discussion #652](https://github.com/orgs/tuna-os/discussions/652).
+
 **Can I dual-boot TunaOS?**
 
 TunaOS uses bootc which manages the bootloader. Dual-boot is possible but not the primary use case. For multi-OS on one machine, use [Tacklebox](/docs/tacklebox/getting-started) to create a multi-boot USB.
@@ -74,6 +82,26 @@ availability differs across the wider variant family, though. Gurnard ships
 **Base + Pantheon** (elementary OS's desktop). Grouper, Flounder, and Marlin add
 XFCE to the core GNOME/KDE/COSMIC/Niri set. See the variant page for the exact
 desktop × architecture matrix.
+
+**Does TunaOS support ARM64?**
+
+Yes, but support depends on the variant and hardware. [Bonito](bonito.md) is
+the documented ARM64-capable Fedora variant, while the
+[system requirements](system-requirements.md) describe the general ARM64
+requirements. Dedicated images are available for supported hardware such as
+the [ThinkPad X13s](bonito-x13s/). Check the relevant variant page before
+installing: an ARM64 entry in the general requirements does not mean that
+every variant or device is tested.
+
+**Will TunaOS run on a Copilot+ ARM PC?**
+
+Not as a blanket guarantee. Copilot+ PCs use different Snapdragon platforms,
+firmware, and peripherals, so compatibility must be checked per model. TunaOS
+does have a documented [Bonito X13s image](bonito-x13s/), but that is specific
+to the Lenovo ThinkPad X13s and should not be treated as support for every
+Copilot+ PC. Linux support for the machine's NPU is also separate from basic
+ARM64 boot and device support. See [Discussion #93](https://github.com/orgs/tuna-os/discussions/93)
+for the originating question.
 
 **What does `-hwe` and `-nvidia` mean?**
 
